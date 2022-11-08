@@ -5,7 +5,7 @@
     <div class="col-8 mt-4">
       <div class="card text-center shadow-lg mb-5 bg-white rounded">
         <div class="card-header fst-italic">
-         <h5 class="card-title"><%= link_to recipe.name.capitalize, recipe_path(recipe), class: "copy-right text-success" %></h5>
+          <h5 class="card-title"><%= link_to recipe.name.capitalize, recipe_path(recipe), class: "underline text-success" %></h5>
         </div>
         <div class="card-body">
           <div class="card-text"><%= simple_format(truncate(recipe.description, length:100)) %></div>
