@@ -3,7 +3,7 @@ class RecipesController < ApplicationController
     @recipes = Recipe.all
   end
 
-  def def new
+  def def(_new)
     @recipe = Recipe.new
   end
 
@@ -11,12 +11,16 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new(recipe_params)
     @recipe.user_id = current_user.id
     if @recipe.save
-     redirect_to recipes_path
+      redirect_to recipes_path
     else
       render 'new'
     end
   end
-  
+
+  def show
+    @recipe = Recipe.find(params[:id])
+  end
+
   def destroy
     @recipe = Recipe.find(params[:id])
     @recipe.destroy
