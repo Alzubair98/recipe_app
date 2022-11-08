@@ -1,0 +1,86 @@
+
+html,
+body {
+  height: 100%;
+}
+
+.navbar {
+  background-color: black !important;
+}
+
+.nav-link {
+  color: white !important;
+}
+
+#logo {
+  float: left;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+/* // footer  */
+#sticky-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  flex-shrink: none;
+}
+
+#page-content {
+  background-color: lightgray;
+}
+
+.submit-button {
+  margin-top: 1rem;
+}
+
+.underline {
+  text-decoration: none;
+}
+
+.position {
+  margin-left: 90%;
+}
+
+/* // pagination */
+.apple_pagination {
+  text-align: center;
+  padding: 1em;
+  cursor: default;
+}
+
+.apple_pagination a,
+.apple_pagination span {
+  padding: 0.2em 0.3em;
+}
+
+.apple_pagination .disabled {
+  color: #aaa;
+}
+
+.apple_pagination .current {
+  font-style: normal;
+  font-weight: bold;
+  background-color: #bebebe;
+  display: inline-block;
+  width: 1.4em;
+  height: 1.4em;
+  line-height: 1.5;
+  -moz-border-radius: 1em;
+  -webkit-border-radius: 1em;
+  border-radius: 1em;
+  text-shadow: rgba(255, 255, 255, 0.8) 1px 1px 1px;
+}
+
+.apple_pagination a {
+  text-decoration: none;
+  color: #aaa;
+}
+
+.apple_pagination a:hover,
+.apple_pagination a:focus {
+  color: gray;
+}
