@@ -24,6 +24,8 @@ body {
 /* // footer  */
 #sticky-footer {
   position: fixed;
+  height: 5%;
+  padding-top: 4px;
   bottom: 0;
   width: 100%;
   flex-shrink: none;
