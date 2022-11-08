@@ -1,4 +1,4 @@
-<%= form_with(model: @recipe, local:true) do |f| %>
+<%= form_with model: Recipe.new do |f| %>
 <div class="container">
   <div class="form-group">
     <%= f.label :name %><br />
@@ -26,7 +26,7 @@
   </div>
 
   <div class="submit-button">
-    <%= f.submit class: "btn btn-outline-dark btn-lg" %>
+    <%= f.submit "Create Recipe", class: "btn btn-outline-dark btn-lg" %>
   </div>
 </div>
 <% end %>
