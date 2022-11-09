@@ -32,6 +32,7 @@ body {
 }
 
 #page-content {
+  flex: 1 0 auto;
   background-color: lightgray;
 }
 
@@ -93,7 +94,25 @@ body {
   margin: 1rem 7.5rem;
 }
 
-
 .line {
   margin: 0 7.5rem;
+}
+
+/* background-img */
+#home-cont{
+  height: 100%;
+}
+
+.jumbotron{
+  position: fixed;
+  background-image: asset-url("photo.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.text-cont{
+  margin-top: 10rem;
 }
