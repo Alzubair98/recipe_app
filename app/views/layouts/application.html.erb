@@ -13,9 +13,11 @@
   <%= javascript_importmap_tags %>
 </head>
 
-<body id="page-content" class="d-flex flex-column">
+<body class="d-flex flex-column">
   <%= render 'layouts/navbar'%>
-  <div>
+  <div id="page-content">
+    <p class="notice a"><%= notice %></p>
+    <p class="alert a"><%= alert %></p>
     <%= yield %>
   </div>
   <%= render 'shared/footer'%>
