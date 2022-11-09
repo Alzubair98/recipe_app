@@ -18,14 +18,31 @@ class FoodsController < ApplicationController
   end
 
   def destroy
-    @food = Food.find(params[:id])
+    set_food
     @food.destroy
     redirect_to foods_path
+  end
+
+  def edit
+    set_food
+  end
+
+  def update 
+    set_food
+    if @food.update(food_params)
+      redirect_to recipes_path
+    else 
+      render 'edit'
+    end
   end
 
   private
 
   def food_params
     params.require(:food).permit(:name, :measurement_unit, :price, :quantity)
+  end
+
+  def set_food 
+    @food = Food.find(params[:id])
   end
 end
