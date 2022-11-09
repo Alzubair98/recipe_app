@@ -1,19 +1,19 @@
 <div class="container mt-5">
- <table class="table">
+  <table class="table">
     <thead>
       <tr>
-        <th scope="col">Food</th>
         <th scope="col">Quantity</th>
-        <th scope="col">Value</th>
+        <th scope="col">food_id</th>
+        <th scope="col">recipe_id</th>
         <th scope="col">Actions</th>
       </tr>
     </thead>
     <tbody>
       <% @recipe_foods.each do |recipe_food| %>
       <tr>
-        <td><%= recipe_food.name %></td>
-        <td><%= recipe_food.measurement_unit %></td>
-        <td><%= recipe_food.price %></td>
+        <td><%= recipe_food.quantity %></td>
+        <td><%= recipe_food.food.name %></td>
+        <td><%= recipe_food.recipe.name %></td>
         <td><%= link_to 'Modify', class: "btn btn-outline-danger" %><span><%= link_to 'Remove', class: "btn btn-outline-danger" %></span></td>
       </tr>
     </tbody>
