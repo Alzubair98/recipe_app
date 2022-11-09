@@ -27,11 +27,11 @@ class FoodsController < ApplicationController
     set_food
   end
 
-  def update 
+  def update
     set_food
     if @food.update(food_params)
       redirect_to recipes_path
-    else 
+    else
       render 'edit'
     end
   end
@@ -42,7 +42,7 @@ class FoodsController < ApplicationController
     params.require(:food).permit(:name, :measurement_unit, :price, :quantity)
   end
 
-  def set_food 
+  def set_food
     @food = Food.find(params[:id])
   end
 end
