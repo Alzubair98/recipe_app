@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'recipes/new', to: 'recipes#new' 
   post 'recipes/new', to: 'recipes#create' 
   resources :recipes, except: [:new]
+  resources :recipe_foods
 
   # Defines the root path route ("/")
   # root "articles#index"
