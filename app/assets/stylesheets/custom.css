@@ -86,3 +86,14 @@ body {
 .apple_pagination a:focus {
   color: gray;
 }
+
+.button-cont {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 7.5rem;
+}
+
+
+.line {
+  margin: 0 7.5rem;
+}
