@@ -33,7 +33,7 @@ gem 'jbuilder'
 # add pagination
 gem 'will_paginate', '~> 3.3'
 
-#add device gem 
+# add device gem
 gem 'devise'
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
