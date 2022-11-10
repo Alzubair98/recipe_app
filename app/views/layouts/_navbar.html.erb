@@ -29,6 +29,9 @@
           </ul>
         </li>
       </ul>
+      <% if user_signed_in? %>
+      <h2 class="navbar-brand name"><%= current_user.name.capitalize %></h2>
+      <%end%>
     </div>
   </div>
 </nav>
