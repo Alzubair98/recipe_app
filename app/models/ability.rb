@@ -6,9 +6,8 @@ class Ability
 
     # can :read, Food # Any user can do
 
-    # return unless user.present? # A logged in user can do
-
-    # can %i[read update], Food, user: user
+    return unless user.present? # A logged in user can do
+    can :manage, Food, user: user
 
     # return unless user.admin? # An adminstartaor can do
 
