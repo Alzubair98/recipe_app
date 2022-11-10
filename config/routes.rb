@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :foods
   get 'recipes/new', to: 'recipes#new' 
   post 'recipes/new', to: 'recipes#create' 
+  get 'public_recipes', to: 'recipes#public_recipe'
   resources :recipes, except: [:new]
   resources :recipe_foods
 

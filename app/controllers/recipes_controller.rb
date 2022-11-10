@@ -4,6 +4,10 @@ class RecipesController < ApplicationController
     @recipes = Recipe.all
   end
 
+  def public_recipe 
+    @recipes = Recipe.all
+  end
+
   def def(_new)
     @recipe = Recipe.new
   end
