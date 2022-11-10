@@ -1,0 +1,17 @@
+<h1 class="text-center mt-4">Public Recipes</h1>
+
+<% @public_recipes.each do |recipe| %>
+    <div class="d-flex">
+
+    <div>
+        <h3><%= link_to recipe.name.capitalize, recipe %></h3> 
+        <p><%= "By: #{recipe.user.name.capitalize}" %></p>
+    </div>
+
+    <div>  
+        <p><%= "Total food items: #{recipe.foods.length}" %></p>
+        <p><%= "Total price: #{recipe.foods.sum(:price)}" %></p>
+    </div>
+    
+    </div>
+<% end %>

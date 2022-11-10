@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   post 'recipes/new', to: 'recipes#create' 
   resources :recipes, except: [:new]
   resources :recipe_foods
-
+  resources :public_recipes
   # Defines the root path route ("/")
   # root "articles#index"
 end
