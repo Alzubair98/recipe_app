@@ -36,7 +36,7 @@ gem 'will_paginate', '~> 3.3'
 # add device gem
 gem 'devise'
 
-#add cancancan for authorization
+# add cancancan for authorization
 gem 'cancancan'
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
