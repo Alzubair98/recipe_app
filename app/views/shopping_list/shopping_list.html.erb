@@ -1,0 +1,25 @@
+<h1>Amount of food items to buy: <%= @items %></h1>
+<h1>Total value of food needed : <%= @value %>$</h1>
+<h1> <%= @food.length%></h1>
+<% if @food.length != 0%>
+<table class="table border border-2 border-dark p-3 my-3">
+  <thead>
+    <tr>
+      <th scope="col">Food</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @food.each do |f|%>
+    <tr>
+      <td><%= f.name %></td>
+      <td><%= f.quantity_sum %> <%= f.measurement_unit %></td>
+      <td>$<%=f.price * f.quantity_sum%></td>
+    </tr>
+    <%end%>
+  </tbody>
+</table>
+<% else %>
+<span>No ingredients in any of your recipes!</span>
+<% end %>

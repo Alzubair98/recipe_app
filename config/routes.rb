@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   resources :foods
   get 'recipes/new', to: 'recipes#new' 
   post 'recipes/new', to: 'recipes#create' 
-  get 'public_recipes', to: 'recipes#public_recipes' 
+  get 'public_recipes', to: 'recipes#public_recipes'
+  get 'shopping_list', to: 'shopping_list#shopping_list' 
   resources :recipes, except: [:new]
   resources :recipe_foods
   # Defines the root path route ("/")
