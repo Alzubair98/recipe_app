@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
   before_action :authenticate_user!
-  load_and_authorize_resource
+  # load_and_authorize_resource
   def index
     @recipes = Recipe.all
   end
@@ -26,6 +26,10 @@ class RecipesController < ApplicationController
   def destroy
     @recipe = Recipe.find(params[:id])
     @recipe.destroy
+  end
+
+  def public_recipes
+    @recipes = Recipe.all
   end
 
   private
