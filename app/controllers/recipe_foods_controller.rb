@@ -1,5 +1,6 @@
 class RecipeFoodsController < ApplicationController
   before_action :authenticate_user!
+  load_and_authorize_resource
   def index
     @recipe_foods = RecipeFood.all
   end
