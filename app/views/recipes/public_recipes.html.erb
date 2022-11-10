@@ -11,10 +11,16 @@
           <h5 class="card-title"><%= link_to recipe.name.capitalize, recipe_path(recipe), class: "underline" %></h5>
           <div class="card-text"><%= simple_format(truncate(recipe.description, length:100)) %></div>
           <div class="card-text">
-          <p>Total food items: <%=recipe.recipe_foods.count%></p>
-          <p>Total price: <%#=recipe.recipe_foods.map(&:price).sum%></p>
+            <p>Total food items: <%=recipe.recipe_foods.count%></p>
+            <p>Total price:
+              <%a = 0%>
+              <% recipe.recipe_foods.each do |recipefood| %>
+              <% a += recipefood.food.price.to_int %>
+              <%end%>
+              <%= a%>
+            </p>
           </div>
-          
+
           <%= link_to 'View', recipe_path(recipe), class: "btn btn-outline-success" %>
           <%= link_to 'Remove', recipe_path(recipe), data: { turbo_method: 'delete', turbo_confirm: "Are you sure to delete" }, class: "btn btn-outline-danger" %>
         </div>
