@@ -20,11 +20,11 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipe = Recipe.find(params[:id])
+    @recipe = find_recipe 
   end
 
   def destroy
-    @recipe = Recipe.find(params[:id])
+    @recipe = find_recipe 
     @recipe.destroy
   end
 
@@ -36,5 +36,9 @@ class RecipesController < ApplicationController
 
   def recipe_params
     params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public)
+  end
+
+  def find_recipe 
+    Recipe.find(params[:id])
   end
 end
