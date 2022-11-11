@@ -7,9 +7,9 @@ class Ability
     can :read, Recipe, public: true # Any user can do
 
     return unless user.present? # A logged in user can do
+
     can :manage, Food, user: user
-    can :manage, Recipe, user: user
-    
+    can :manage, Recipe, user:
 
     # return unless user.admin? # An adminstartaor can do
 
