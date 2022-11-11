@@ -35,17 +35,18 @@ RSpec.describe 'home page', type: :feature do
     expect(page).to have_content("Sign in")
   end
 
-#   it 'should show the user name' do
-#     # user1 = User.find(@user.id)
-#     click_link("Recipe App")
-#     expect(page.current_path).to eql(root_path)
-#   end
+  it 'shows the user name' do
+    expect(page).to have_content("#{@user.name}")
+  end
+  it 'should show the user name' do
+    # user1 = User.find(@user.id)
+    click_link("Sign in")
+    expect(page.current_path).to eql(user_session_path )
+  end
 
-#   it 'shows the photo of the user' do
-#     expect(page.html).to include('user-img')
-#   end
-
-#   it 'shows the number of posts' do
-#     expect(page).to have_content("#{@user.posts_counter}")
-#   end
+  it 'should show the user name' do
+    # user1 = User.find(@user.id)
+    click_link("Sign up!")
+    expect(page.current_path).to eql(new_user_registration_path)
+  end
 end
