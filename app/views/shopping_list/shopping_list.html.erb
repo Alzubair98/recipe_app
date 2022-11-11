@@ -15,7 +15,6 @@
       <% items = 0%>
       <%if @user.recipes.empty? %>
       <% @recipes.each do |recipe| %>
-      <%#if user_recipe.id != recipe.recipe_id%>
       <% value += recipe.food.price %>
       <% items +=1 %>
       <tr>
