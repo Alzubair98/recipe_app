@@ -1,6 +1,6 @@
 require_relative '../rails_helper'
 
-RSpec.describe 'home page', type: :feature do
+RSpec.describe 'Sign up page', type: :feature do
     before(:each) do
       DatabaseCleaner.clean_with(:truncation)
       @user = User.create(
