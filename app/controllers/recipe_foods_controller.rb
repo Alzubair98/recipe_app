@@ -1,5 +1,6 @@
 class RecipeFoodsController < ApplicationController
   before_action :authenticate_user!
+  # load_and_authorize_resource
   def index
     @recipe_foods = RecipeFood.all
   end
@@ -27,6 +28,6 @@ class RecipeFoodsController < ApplicationController
   private
 
   def recipe_foods_params
-    params.require(:recipe_foods).permit(:quantity, :recipe_id, :food_id)
+    params.require(:recipe_food).permit(:quantity, :food_id, :recipe_id)
   end
 end

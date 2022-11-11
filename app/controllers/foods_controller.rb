@@ -1,5 +1,6 @@
 class FoodsController < ApplicationController
   before_action :authenticate_user!
+  load_and_authorize_resource
   def index
     @foods = Food.paginate(page: params[:page], per_page: 5)
   end

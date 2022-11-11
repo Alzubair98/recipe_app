@@ -6,10 +6,13 @@
 </div>
 
 <div class="button-cont">
-  <%= link_to "Generate Shopping list", new_food_path, class: "btn btn-outline-success " %>
-  <%= link_to "Add ingredintes", new_food_path, class: "btn btn-outline-primary " %>
+  <%= link_to "Generate Shopping list", shopping_list_path, class: "btn btn-outline-success " %>
+  <%if can? :update, @recipe%>
+  <%= link_to "Add ingredintes", public_recipes_path, class: "btn btn-outline-primary " %>
+  <%end%>
 </div>
 <hr class="line" />
+
 
 <div class="container mt-5">
   <table class="table">
@@ -18,7 +21,9 @@
         <th scope="col">Food</th>
         <th scope="col">Quantity</th>
         <th scope="col">Value</th>
+        <%if can? :destroy, @recipe%>
         <th scope="col">Action</th>
+        <%end%>
       </tr>
     </thead>
     <tbody>
@@ -27,8 +32,12 @@
         <td><%= recipe_food.food.name.capitalize %></td>
         <td><%= recipe_food.food.quantity.capitalize %></td>
         <td><%= recipe_food.food.price %></td>
-        <td><%= link_to 'Modify', edit_food_path(recipe_food.food) ,class: "btn btn-outline-primary underline" %>
+        <%if can? :update, @recipe%>
+        <td><%= link_to 'Modify', edit_food_path(recipe_food.food) , class: "btn btn-outline-primary underline" %>
+          <%end%>
+          <%if can? :destroy, @recipe%>
           <span><%= link_to 'Remove', food_path(recipe_food.food), data: { turbo_method: 'delete', turbo_confirm: "Are you sure to delete" }, class: "btn btn-outline-danger underline" %></span>
+          <%end%>
         </td>
       </tr>
     </tbody>

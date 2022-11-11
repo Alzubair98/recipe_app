@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
 
 html,
 body {
@@ -119,4 +121,12 @@ body {
 
 .a{
   position: absolute;
+}
+
+.name{
+  font-family: 'Qwitcher Grypen', cursive;
+  margin-left: 70%;
+  font-size: 1.5em;
+  color: #fff;
+  // text-transform: uppercase;
 }
