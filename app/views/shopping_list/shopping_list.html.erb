@@ -1,25 +1,34 @@
-<h1>Amount of food items to buy: <%= @items %></h1>
-<h1>Total value of food needed : <%= @value %>$</h1>
-<h1> <%= @food.length%></h1>
-<% if @food.length != 0%>
-<table class="table border border-2 border-dark p-3 my-3">
-  <thead>
-    <tr>
-      <th scope="col">Food</th>
-      <th scope="col">Quantity</th>
-      <th scope="col">Price</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @food.each do |f|%>
-    <tr>
-      <td><%= f.name %></td>
-      <td><%= f.quantity_sum %> <%= f.measurement_unit %></td>
-      <td>$<%=f.price * f.quantity_sum%></td>
-    </tr>
-    <%end%>
-  </tbody>
-</table>
-<% else %>
-<span>No ingredients in any of your recipes!</span>
-<% end %>
+<h1 class="text-center mt-4">Shopping List</h1>
+
+
+<div class="container mt-5">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Food</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% value = 0%>
+      <% items = 0%>
+      <% @user.recipes.each do |user_recipe| %>
+      <% @recipes.each do |recipe| %>
+      <%if user_recipe.id != recipe.recipe_id%>
+      <% value += recipe.food.price %>
+      <% items +=1 %>
+      <tr>
+        <td><%= recipe.food.name %></td>
+        <td><%= recipe.food.quantity %></td>
+        <td><%= recipe.food.price %></td>
+      </tr>
+      <%end%>
+      <%end%>
+      <%end%>
+      <div class="button-cont">
+        <h4>Amount of Food items to buy : <%=items%></h4>
+        <h4>Total Value of Food Needed : <%=value%> $</h4>
+      </div>
+    </tbody>
+  </table>
