@@ -4,7 +4,9 @@ RSpec.describe 'Log in page', type: :feature do
     before(:each) do
       DatabaseCleaner.clean_with(:truncation)
       @user = User.create(
-        name: 'Alzubair'
+        name: 'Alzubair',
+        email: 'alzubair@gmail.com',
+        password: '123456'
       )
       visit user_session_path
     end
@@ -12,4 +14,12 @@ RSpec.describe 'Log in page', type: :feature do
     it 'shows the Log in button' do
         expect(page).to have_content("Log in")
     end
+
+    it 'are redirected to root page when login is sucessfull' do
+          fill_in 'Email', with: "#{@user.email}"
+          fill_in 'Password', with: "#{@user.password}"
+          find("input[type='submit']").click
+          expect(page).to have_current_path(root_path)
+    end
+
 end
