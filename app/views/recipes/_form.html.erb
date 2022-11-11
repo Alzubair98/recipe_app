@@ -1,0 +1,27 @@
+<%= form_with model: Recipe.new do |f| %>
+<div class="container">
+  <div class="form-group">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :preparation_time %><br />
+    <%= f.text_field :preparation_time, class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :cooking_time %><br />
+    <%= f.text_field :cooking_time, class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :description %><br />
+    <%= f.text_area :description, class:"form-control" %>
+  </div>
+
+  <div class="submit-button">
+    <%= f.submit "Create Recipe", class: "btn btn-outline-dark btn-lg" %>
+  </div>
+</div>
+<% end %>
