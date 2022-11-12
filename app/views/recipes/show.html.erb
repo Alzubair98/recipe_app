@@ -9,37 +9,36 @@
   <%= link_to "Generate Shopping list", shopping_list_path, class: "btn btn-outline-success " %>
   <%if can? :update, @recipe%>
   <%= link_to "Add ingredintes", new_recipe_food_path, class: "btn btn-outline-primary " %>
-  <%end%> new_recipe_food
-</div>
-<hr class="line" />
+  <%end%>
+  <hr class="line" />
 
 
-<div class="container mt-5">
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Food</th>
-        <th scope="col">Quantity</th>
-        <th scope="col">Value</th>
-        <%if can? :destroy, @recipe%>
-        <th scope="col">Action</th>
-        <%end%>
-      </tr>
-    </thead>
-    <tbody>
-      <% @recipe.recipe_foods.each do |recipe_food| %>
-      <tr>
-        <td><%= recipe_food.food.name.capitalize %></td>
-        <td><%= recipe_food.food.quantity.capitalize %></td>
-        <td><%= recipe_food.food.price %></td>
-        <%if can? :update, @recipe%>
-        <td><%= link_to 'Modify', edit_food_path(recipe_food.food) , class: "btn btn-outline-primary underline" %>
-          <%end%>
+  <div class="container mt-5">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Food</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Value</th>
           <%if can? :destroy, @recipe%>
-          <span><%= link_to 'Remove', food_path(recipe_food.food), data: { turbo_method: 'delete', turbo_confirm: "Are you sure to delete" }, class: "btn btn-outline-danger underline" %></span>
+          <th scope="col">Action</th>
           <%end%>
-        </td>
-      </tr>
-    </tbody>
-    <%end%>
-  </table>
+        </tr>
+      </thead>
+      <tbody>
+        <% @recipe.recipe_foods.each do |recipe_food| %>
+        <tr>
+          <td><%= recipe_food.food.name.capitalize %></td>
+          <td><%= recipe_food.food.quantity.capitalize %></td>
+          <td><%= recipe_food.food.price %></td>
+          <%if can? :update, @recipe%>
+          <td><%= link_to 'Modify', edit_food_path(recipe_food.food) , class: "btn btn-outline-primary underline" %>
+            <%end%>
+            <%if can? :destroy, @recipe%>
+            <span><%= link_to 'Remove', food_path(recipe_food.food), data: { turbo_method: 'delete', turbo_confirm: "Are you sure to delete" }, class: "btn btn-outline-danger underline" %></span>
+            <%end%>
+          </td>
+        </tr>
+      </tbody>
+      <%end%>
+    </table>
