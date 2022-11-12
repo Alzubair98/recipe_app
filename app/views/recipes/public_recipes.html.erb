@@ -1,6 +1,6 @@
 <h1 class="text-center mt-4">Public Recipes</h1>
 <div class="container">
-  <% @recipes.each do |recipe| %>
+  <% @recipes.includes(:user, :recipe_foods).each do |recipe| %>
   <%if can? :read, recipe%>
   <div class="row justify-content-md-center">
     <div class="col-8 mt-4">
