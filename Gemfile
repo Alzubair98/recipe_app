@@ -80,8 +80,9 @@ group :test do
   gem 'faker', '~> 1.6', '>= 1.6.6'
   gem 'selenium-webdriver'
   gem 'webdrivers'
+  gem 'ffi'
 end
 
 gem 'bootstrap', '~> 5.2'
 
-gem 'ffi'
+
