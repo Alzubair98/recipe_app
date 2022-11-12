@@ -8,8 +8,8 @@
 <div class="button-cont">
   <%= link_to "Generate Shopping list", shopping_list_path, class: "btn btn-outline-success " %>
   <%if can? :update, @recipe%>
-  <%= link_to "Add ingredintes", public_recipes_path, class: "btn btn-outline-primary " %>
-  <%end%>
+  <%= link_to "Add ingredintes", new_recipe_food_path, class: "btn btn-outline-primary " %>
+  <%end%> new_recipe_food
 </div>
 <hr class="line" />
 

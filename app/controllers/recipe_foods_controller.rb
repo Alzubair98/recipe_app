@@ -13,7 +13,7 @@ class RecipeFoodsController < ApplicationController
     @recipe_foods = RecipeFood.new(recipe_foods_params)
 
     if @recipe_foods.save
-      redirect_to recipe_foods_path
+      redirect_to public_recipes_path
     else
       render 'new'
     end
