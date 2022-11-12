@@ -14,7 +14,7 @@
       </tr>
     </thead>
     <tbody>
-      <% @foods.each do |food| %>
+      <% @foods.includes(:user).each do |food| %>
       <%if can? :read, food%>
       <tr>
         <td><%= food.name %></td>
