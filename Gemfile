@@ -30,7 +30,7 @@ gem 'jbuilder'
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
-# n+1 problem 
+# n+1 problem
 gem 'bullet', group: 'development'
 
 # add pagination
