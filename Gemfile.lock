@@ -108,6 +108,10 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.5.0)
+    dotenv (2.8.1)
+    dotenv-rails (2.8.1)
+      dotenv (= 2.8.1)
+      railties (>= 3.2)
     erubi (1.11.0)
     execjs (2.8.1)
     faker (1.9.6)
@@ -283,6 +287,7 @@ DEPENDENCIES
   database_cleaner
   debug
   devise
+  dotenv-rails
   faker (~> 1.6, >= 1.6.6)
   ffi
   importmap-rails
