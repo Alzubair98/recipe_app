@@ -88,6 +88,7 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV['DATABAS_URL'] %>
   database: <%= ENV['POSTGRES_DB'] %>
   username: <%= ENV['POSTGRES_USER'] %>
-  password: <%= ENV['POSTGRES_PASSWORD'] %>
+  password: <%= ENV['RAILWAY_DATABASE_PASSWORD'] %>
